@@ -13,7 +13,7 @@ import PlacePage from './pages/PlacePage';
 import BookingsPage from './pages/BookingsPage';
 import BookingPage from './pages/BookingPage';
 import {disableReactDevTools} from '@fvilers/disable-react-devtools';
-import process from './process';
+import process from 'process';
 
 axios.defaults.baseURL = 'https://wnw-api.onrender.com';
 axios.defaults.withCredentials = true;
