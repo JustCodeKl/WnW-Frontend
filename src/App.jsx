@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import LoginPage from './pages/LoginPage';
-import IndexPage from './IndexPage';
+import IndexPage from './pages/IndexPage';
 import Layout from './Layout';
 import RegisterPage from './pages/RegisterPage';
 import axios from 'axios';
