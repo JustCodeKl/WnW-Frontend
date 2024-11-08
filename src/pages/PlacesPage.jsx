@@ -58,7 +58,7 @@ export default function PlacesPage() {
                       >
                         <img
                           src={
-                            "http://localhost:4000/uploads/" +
+                            "https://wnw-api.onrender.com/uploads/" +
                             place.photos[0].newName
                           }
                           alt=""

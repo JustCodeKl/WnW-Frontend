@@ -53,7 +53,7 @@ export default function BookingsPage(){
                                         booking.place.photos.length > 0 && (
                                             <img
                                             src={
-                                              "http://localhost:4000/uploads/" +
+                                              "https://wnw-api.onrender.com/uploads/" +
                                               booking.place.photos[0].newName
                                             }
                                             alt=""
@@ -115,7 +115,7 @@ export default function BookingsPage(){
                                         booking.place.photos.length > 0 && (
                                             <img
                                             src={
-                                              "http://localhost:4000/uploads/" +
+                                              "https://wnw-api.onrender.com/uploads/" +
                                               booking.place.photos[0].newName
                                             }
                                             alt=""
@@ -179,7 +179,7 @@ export default function BookingsPage(){
                                         booking.place.photos.length > 0 && (
                                             <img
                                             src={
-                                              "http://localhost:4000/uploads/" +
+                                              "https://wnw-api.onrender.com/uploads/" +
                                               booking.place.photos[0].newName
                                             }
                                             alt=""

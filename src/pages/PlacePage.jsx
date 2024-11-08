@@ -68,7 +68,7 @@ export default function PlacePage() {
         <div className="bg-black px-8 grid gap-4 grid-cols-3 py-2">
           {place?.photos?.map((photo, index) => (
             <img
-              src={"http://localhost:4000/uploads/" + photo?.newName}
+              src={"https://wnw-api.onrender.com/uploads/" + photo?.newName}
               alt=""
               className="object-cover h-[500px] w-[-webkit-fill-available]"
               key={index + photo?.newName} role="img"
@@ -136,7 +136,7 @@ export default function PlacePage() {
           {place?.photos?.[0] && (
             <img
               src={
-                "http://localhost:4000/uploads/" + place?.photos?.[0]?.newName
+                "https://wnw-api.onrender.com/uploads/" + place?.photos?.[0]?.newName
               }
               alt="img"
               onClick={() => setAllPhotos(true)}
@@ -148,7 +148,7 @@ export default function PlacePage() {
           {place?.photos?.[1] && (
             <img
               src={
-                "http://localhost:4000/uploads/" + place?.photos?.[1]?.newName
+                "https://wnw-api.onrender.com/uploads/" + place?.photos?.[1]?.newName
               }
               alt="img"
               onClick={() => setAllPhotos(true)}
@@ -160,7 +160,7 @@ export default function PlacePage() {
           {place?.photos?.[2] && (
             <img
               src={
-                "http://localhost:4000/uploads/" + place?.photos?.[2]?.newName
+                "https://wnw-api.onrender.com/uploads/" + place?.photos?.[2]?.newName
               }
               alt="img"
               onClick={() => setAllPhotos(true)}
@@ -172,7 +172,7 @@ export default function PlacePage() {
           {place?.photos?.[3] && (
             <img
               src={
-                "http://localhost:4000/uploads/" + place?.photos?.[3]?.newName
+                "https://wnw-api.onrender.com/uploads/" + place?.photos?.[3]?.newName
               }
               alt="img"
               onClick={() => setAllPhotos(true)}
