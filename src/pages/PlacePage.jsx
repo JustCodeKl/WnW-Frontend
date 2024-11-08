@@ -131,7 +131,7 @@ export default function PlacePage() {
         </svg>
         {newAddress}
       </a>
-      <div className="grid grid-cols-2 h-[800px] w-full mt-2 gap-2 mb-10">
+      <div className="grid grid-cols-2 h-[800px] w-full mt-2 gap-2 mb-10 max-sm:h[400px]">
         <div className="">
           {place?.photos?.[0] && (
             <img
@@ -205,7 +205,7 @@ export default function PlacePage() {
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-[2fr_1fr] items-center gap-2">
+      <div className="grid grid-cols-[2fr_1fr] items-center gap-2 max-sm:grid-cols-1">
         <div className="rounded-lg p-2 items-center grid grid-cols-[1fr]">
           <div className="my-4 ">
             <h2 className="font-semibold text-2xl">Description</h2>
