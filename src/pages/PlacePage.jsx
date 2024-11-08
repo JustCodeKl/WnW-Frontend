@@ -70,7 +70,7 @@ export default function PlacePage() {
             <img
               src={"https://wnw-api.onrender.com/uploads/" + photo?.newName}
               alt=""
-              className="object-cover h-[500px] w-[-webkit-fill-available] max-sm:h-[150px]"
+              className="object-cover h-[500px] w-[-webkit-fill-available] max-sm:h-[300px]"
               key={index + photo?.newName} role="img"
             />
           ))}
