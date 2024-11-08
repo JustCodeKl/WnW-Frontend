@@ -131,7 +131,7 @@ export default function PlacePage() {
         </svg>
         {newAddress}
       </a>
-      <div className="grid grid-cols-2 h-[800px] w-full mt-2 gap-2 mb-10 max-sm:h[400px]">
+      <div className="grid grid-cols-2 h-[800px] w-full mt-2 gap-2 mb-10 max-sm:h[2500px]">
         <div className="">
           {place?.photos?.[0] && (
             <img
@@ -140,7 +140,7 @@ export default function PlacePage() {
               }
               alt="img"
               onClick={() => setAllPhotos(true)}
-              className="rounded-tl-lg object-cover w-full h-[400px] cursor-pointer"
+              className="rounded-tl-lg object-cover w-full h-[400px] max-sm:h[2500px] cursor-pointer"
             />
           )}
         </div>
@@ -152,7 +152,7 @@ export default function PlacePage() {
               }
               alt="img"
               onClick={() => setAllPhotos(true)}
-              className="rounded-tr-lg object-cover h-[400px] w-full cursor-pointer"
+              className="rounded-tr-lg object-cover h-[400px] max-sm:h[2500px] w-full cursor-pointer"
             />
           )}
         </div>
@@ -164,7 +164,7 @@ export default function PlacePage() {
               }
               alt="img"
               onClick={() => setAllPhotos(true)}
-              className="rounded-bl-lg object-cover h-[400px] w-full cursor-pointer"
+              className="rounded-bl-lg object-cover h-[400px] max-sm:h[2500px] w-full cursor-pointer"
             />
           )}
         </div>
@@ -176,7 +176,7 @@ export default function PlacePage() {
               }
               alt="img"
               onClick={() => setAllPhotos(true)}
-              className="rounded-br-lg object-cover h-[400px] w-full cursor-pointer"
+              className="rounded-br-lg object-cover h-[400px] max-sm:h[2500px] w-full cursor-pointer"
             />
           )}
         </div>
