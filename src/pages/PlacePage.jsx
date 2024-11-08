@@ -65,12 +65,12 @@ export default function PlacePage() {
             </svg>
           </button>
         </div>
-        <div className="bg-black px-8 grid gap-4 grid-cols-3 py-2">
+        <div className="bg-black px-8 grid gap-4 grid-cols-3 py-2 max-sm:grid-cols-1 ">
           {place?.photos?.map((photo, index) => (
             <img
               src={"https://wnw-api.onrender.com/uploads/" + photo?.newName}
               alt=""
-              className="object-cover h-[500px] w-[-webkit-fill-available]"
+              className="object-cover h-[500px] w-[-webkit-fill-available] max-sm:h-[150px]"
               key={index + photo?.newName} role="img"
             />
           ))}
