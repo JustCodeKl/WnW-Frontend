@@ -207,7 +207,7 @@ export default function PlacePage() {
       </div>
       <div className="grid grid-cols-[2fr_1fr] items-center gap-2 max-sm:grid-cols-1">
         <div className="rounded-lg p-2 items-center grid grid-cols-[1fr]">
-          <div className="my-4 max-sm:mt-8">
+          <div className="my-4 max-sm:mt-[14rem]">
             <h2 className="font-semibold text-2xl">Description</h2>
             {place?.description}
           </div>
