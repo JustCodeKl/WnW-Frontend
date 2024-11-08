@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
 import LoginPage from './pages/LoginPage';
 import IndexPage from './pages/IndexPage';
 import Layout from './Layout';
@@ -12,13 +11,13 @@ import PlaceFormPage from './pages/PlaceFormPage';
 import PlacePage from './pages/PlacePage';
 import BookingsPage from './pages/BookingsPage';
 import BookingPage from './pages/BookingPage';
-import {disableReactDevTools} from '@fvilers/disable-react-devtools';
-import process from 'process';
+/* import {disableReactDevTools} from '@fvilers/disable-react-devtools';
+import process from 'process'; */
 
 axios.defaults.baseURL = 'https://wnw-api.onrender.com';
 axios.defaults.withCredentials = true;
 
-if(process?.env?.NODE_ENV === 'production') disableReactDevTools();
+// if(process?.env?.NODE_ENV === 'production') disableReactDevTools();
 
 function App() {
 
