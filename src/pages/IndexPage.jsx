@@ -22,7 +22,7 @@ export default function IndexPage(){
                                 <div className="grow shrink-0 rounded-lg flex shadow-md shadow-gray-200 z-0 " >
                                     {
                                         place.photos.length > 0  && (
-                                            <img src={"http://wnw-api:4000/uploads/" + place.photos[0].newName} alt="img" className=" object-cover aspect-square rounded-lg h-full" key={place._id}/>
+                                            <img src={"http://wnw-api.onrender.com:4000/uploads/" + place.photos[0].newName} alt="img" className=" object-cover aspect-square rounded-lg h-full" key={place._id}/>
                                         )
                                     }
                                 </div>
