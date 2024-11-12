@@ -212,7 +212,7 @@ export default function PlacePage() {
             {place?.description}
           </div>
           <div className="grid">
-            <span className="text-2xl">Check In/Out & Guests </span> <br />
+            <span className="text-2xl font-semibold">Check In/Out & Guests </span> <br />
             <div className="flex justify-between ">
               <span className="font-bold">Check-In: {place?.checkIn} </span>
               <span className="font-bold">Check-Out: {place?.checkOut} </span>
@@ -312,7 +312,6 @@ export default function PlacePage() {
                   onChange={(e) => setPhoneNumber(e.target.value)}
                   data-hs-pin-input-item
                   className="w-full border my-3 py-2 px-4 rounded-lg"
-                  required
                 />
               </div>
             </>
