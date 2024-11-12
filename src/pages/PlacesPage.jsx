@@ -20,7 +20,7 @@ export default function PlacesPage() {
           <div className="text-center">
             List of all added places <br />
             <Link
-              className="bg-primary inline-flex gap-2 py-2 px-4 rounded-lg text-white"
+              className="bg-primary inline-flex gap-2 py-2 px-4 rounded-lg text-white max-sm:text-sm items-center"
               to={"/account/places/new"}
             >
               <svg
@@ -29,7 +29,7 @@ export default function PlacesPage() {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="size-6"
+                className="size-6 max-sm:size-4"
               >
                 <path
                   strokeLinecap="round"
@@ -48,12 +48,12 @@ export default function PlacesPage() {
                 <Link
                   to={"/account/places/" + place._id}
                   key={place._id + index}
-                  className="flex cursor-pointer bg-gray-100 gap-4 p-4 rounded-lg shadow-md shadow-gray-300 mb-4"
+                  className="flex cursor-pointer bg-gray-100 gap-4 p-4 rounded-lg shadow-md shadow-gray-300 mb-4 max-sm:grid"
                 >
                   {place.photos.length > 0 && (
                     <>
                       <div
-                        className="grow shrink-0 h-[100px] w-[180px] 2xl:w-[180px] shadow-md shadow-gray-200 object-cover"
+                        className="grow shrink-0 h-[100px] w-[180px] 2xl:w-[180px] shadow-md shadow-gray-200 object-cover max-sm:w-full max-sm:h-[180px]"
                         key={place._id + index + place._id}
                       >
                         <img
@@ -62,7 +62,7 @@ export default function PlacesPage() {
                             place.photos[0].newName
                           }
                           alt=""
-                          className="h-[-webkit-fill-available] w-[180px] rounded-lg object-cover"
+                          className="h-[-webkit-fill-available] w-[180px] rounded-lg object-cover max-sm:w-full"
                           key={place.id}
                         />
                       </div>
