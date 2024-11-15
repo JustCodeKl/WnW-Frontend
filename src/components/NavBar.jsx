@@ -13,7 +13,7 @@ export default function NavBar(){
     }
 
     return (
-        <nav className="w-full mt-8 flex gap-4 max-sm:gap-2" >
+        <nav className="w-full mt-8 flex gap-4 max-sm:gap-2 justify-center" >
                 <Link to="/account/profile" className={linkClasses('profile')}> 
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 max-sm:size-4">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
