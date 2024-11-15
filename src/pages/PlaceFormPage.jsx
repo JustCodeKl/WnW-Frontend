@@ -104,11 +104,11 @@ export default function PlaceFormPage(){
                                 </div>
                                 <div>
                                     <h4 className="mb-1">Max number of guests</h4>
-                                    <input type="number" name="" id="guests" className="border py-2 px-6 rounded-lg" value={guests} onChange={e => change(e, setGuests)}/>
+                                    <input type="number" name="" id="guests" className="border py-2 px-6 rounded-lg max-sm:w-[75%]" value={guests} onChange={e => change(e, setGuests)}/>
                                 </div>
                                 <div>
                                     <h4 className="mb-1">Price per night</h4>
-                                    <input type="number" name="" id="guests" className="border py-2 px-6 rounded-lg" value={price} onChange={e => change(e, setPrice)}/>
+                                    <input type="number" name="" id="guests" className="border py-2 px-6 rounded-lg max-sm:w-[75%]" value={price} onChange={e => change(e, setPrice)}/>
                                 </div>
                             </div>
                             <button type="submit" className="primary my-4">Save</button>

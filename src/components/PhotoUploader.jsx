@@ -50,16 +50,16 @@ export default function PhotoUploader({addedPhotos, onChange}){
     return (
         <>
             
-            <div className="flex gap-4">
+            <div className="flex gap-4 max-sm:items-center">
                                 <input type="text" name="" id="link" placeholder="Add using a link ..." value={photoLink} onChange={e => change(e, setPhotoLink)}/>
-                                <button  onClick={addPhotoByLink} type="button" className="text-white flex justify-center items-center gap-2 font-bold bg-primary grow border rounded-lg px-4 shadow-md shadow-gray-300">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                                <button  onClick={addPhotoByLink} type="button" className="max-sm:h-[50px] max-sm:text-sm max-sm:gap-1 max-sm:px-2 text-white flex justify-center items-center gap-2 font-bold bg-primary grow border rounded-lg px-4 shadow-md shadow-gray-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 max-sm:size-5">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                                     </svg>
                                     Add&nbsp;photo
                                 </button>
                             </div>
-                            <div className="mt-2 grid gap-4  grid-cols-3 md:grid-cols-4 lg:grid-cols-6" key={uuidv4()}>   
+                            <div className="mt-2 grid gap-4  grid-cols-3 md:grid-cols-4 lg:grid-cols-6  max-sm:grid-cols-2" key={uuidv4()}>   
                             {
                                     addedPhotos.length > 0 && addedPhotos.map((linkPhoto, index) => 
                                     <>
