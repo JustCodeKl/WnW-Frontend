@@ -44,7 +44,7 @@ export default function Header() {
             }
           </Link>
         </header>
-        <div className="flex gap-6 border border-color-gray-400 rounded-full px-6 py-2 shadow-md shadow-gray-300 max-sm:hidden w-[90%] max-sm:w-full max-md:text-[14px] max-md:justify-center max-md:mt-[10px]
+        <div className="flex gap-6 border border-color-gray-400 rounded-full px-6 py-2 shadow-md shadow-gray-300 md:hidden w-[90%] max-sm:w-full max-md:text-[14px] max-md:justify-center max-md:mt-[10px]
           max-md:mx-[5%] max-sm:mx-[1%]
         ">
             <div>where</div>
