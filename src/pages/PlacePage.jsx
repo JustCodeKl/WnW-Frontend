@@ -34,7 +34,7 @@ export default function PlacePage() {
   }, [id, user]);
 
   const address = place?.address.split(",");
-  const newAddress = address?.[0] + ", " + address?.[address?.length - 1];
+  const newAddress = address !== undefined ? address?.[0] + ", " + address?.[address?.length - 1]: '';
 
   if (allPhotos) {
     return (
