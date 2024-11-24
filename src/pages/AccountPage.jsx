@@ -26,7 +26,7 @@ export default function AccountPage(){
             
             <NavBar />
                     <div className="text-center  max-w-lg mx-auto mt-4">
-                        Logged as {user.name} ({user.email})
+                        Logged as {user?.name} ({user?.email})
                         <br />
                         <button onClick={logoutUser} className="primary max-w-sm mt-4"> Logout </button>
                     </div>

@@ -13,6 +13,8 @@ export function UserContextProvider({children}){
     const [usersList, setUsersList] = useState([]);
     const [addedPlacesList, setAddedPlacesList] = useState([]);
 
+    console.log(user);
+
     useEffect(() => {
         if(!user){
             axios.get('/profile')
