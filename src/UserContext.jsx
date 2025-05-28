@@ -16,6 +16,10 @@ export function UserContextProvider({children}){
     console.log(user);
 
     useEffect(() => {
+        if(logout){
+            setUser(null);
+            console.log('User sets to null');
+        }
         if(user){
             console.log('User: ' + user)
             axios.get('/profile')
