@@ -16,7 +16,7 @@ export function UserContextProvider({children}){
     console.log(user);
 
     useEffect(() => {
-        if(!user){
+        if(user){
             console.log('User: ' + user)
             axios.get('/profile')
                 .then(({data}) => {
