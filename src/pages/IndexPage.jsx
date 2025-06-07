@@ -1,8 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { fadeIn } from "react-animations";
-import styled, { keyframes } from "styled-components";
 
 export default function IndexPage(){
     const [allPlaces, setAllPlaces] = useState([]);
