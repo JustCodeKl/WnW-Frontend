@@ -39,7 +39,7 @@ export function UserContextProvider({children}){
               });
         }
         
-    }, [user, usersList])
+    }, [logout, user, usersList])
 
     return (
        <UserContext.Provider value={{user, setUser, ready, logout, setLogout, redirect, setRedirect, usersList, addedPlacesList, filterPlaces, setFilterPlaces}}>

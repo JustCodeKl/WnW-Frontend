@@ -19,6 +19,7 @@ export default function IndexPage(){
 
     let filterPlaceArray = allPlaces.filter((place) => 
         place.address.split(',').slice(-1)[0].startsWith(filterPlaces));
+    console.log(filterPlaceArray)
 
     const Bounce = styled.div`animation: 1s ${keyframes`${fadeIn}`}`;
 
@@ -26,7 +27,7 @@ export default function IndexPage(){
         <>  
             <div className="grid grid-cols-2 max-sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mt-10 max-sm:mt-6 gap-x-6 gap-y-8 ml-auto mr-auto" role="home">
                     {
-                        allPlaces.length > 0 && filterPlaces === ''?
+                        allPlaces.length > 0 && filterPlaces === '' &&
                         allPlaces.map((place, index) =>
                         (
                             <Bounce key={index}>
@@ -52,7 +53,8 @@ export default function IndexPage(){
                             </Bounce>
                         )
                         )
-                        :
+                    }
+                    {
                         allPlaces.length > 0 && filterPlaces !== '' && filterPlaceArray.map((place, index) =>
                         (
                             <Bounce key={index}>
