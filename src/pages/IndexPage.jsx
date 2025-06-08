@@ -17,8 +17,8 @@ export default function IndexPage(){
     const {filterPlaces} = useContext(UserContext);
     console.log(filterPlaces);
 
-    let filterPlaceArray = filterPlaces !== ''  && allPlaces.filter((place) => 
-        console.log(place.address.split(',')));
+    let filterPlaceArray = filterPlaces !== ''? allPlaces.filter((place) => 
+        console.log(place.address.split(','))): [];
     console.log(filterPlaceArray)
 
     const Bounce = styled.div`animation: 1s ${keyframes`${fadeIn}`}`;
@@ -55,7 +55,7 @@ export default function IndexPage(){
                         )
                     }
                     {
-                        allPlaces.length > 0 && filterPlaces !== '' && filterPlaceArray.map((place, index) =>
+                        filterPlaceArray.length > 0 && filterPlaces !== '' && filterPlaceArray.map((place, index) =>
                         (
                             <Bounce key={index}>
                                 <Link to={'/place/' + place._id} key={index}>
