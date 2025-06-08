@@ -17,7 +17,7 @@ export default function IndexPage(){
 
     return (
         <>  
-            <div className="grid grid-cols-2 max-sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-6 mt-10 max-sm:mt-6 gap-x-6 gap-y-8 ml-auto mr-auto" role="home">
+            <div className="grid grid-cols-2 max-sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mt-10 max-sm:mt-6 gap-x-6 gap-y-8 ml-auto mr-auto" role="home">
                     {
                         allPlaces.length > 0 && allPlaces.map((place, index) =>
                         (
