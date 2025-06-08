@@ -30,7 +30,6 @@ export default function IndexPage(){
                         allPlaces.length > 0 &&
                         allPlaces.map((place, index) =>
                         (
-                            <Bounce key={index}>
                                 <Link to={'/place/' + place._id} key={index}>
                                 
                                 <div className="grow shrink-0 rounded-lg flex shadow-md shadow-gray-200 z-0 " >
@@ -50,7 +49,6 @@ export default function IndexPage(){
                                     </div>
                                 </div>
                             </Link>
-                            </Bounce>
                         )
                         )
                     }
