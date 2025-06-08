@@ -18,7 +18,7 @@ export default function IndexPage(){
     console.log(filterPlaces);
 
     let filterPlaceArray = allPlaces.filter((place) => 
-        place.address.split(',').slice(-1)[0].startsWith(filterPlaces));
+        place.address.split(',')[-1].startsWith(filterPlaces));
     console.log(filterPlaceArray)
 
     const Bounce = styled.div`animation: 1s ${keyframes`${fadeIn}`}`;
