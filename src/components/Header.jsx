@@ -10,7 +10,7 @@ export default function Header() {
   const useToggle = () => {
     const [toggleValue, setToggleValue] = useState(true);
 
-    const toggler = () => { setToggleValue(!toggleValue); setFilterPlaces('') };
+    const toggler = () => { setToggleValue(!toggleValue) };
     return [toggleValue, toggler]
   };
 

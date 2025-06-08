@@ -23,7 +23,6 @@ export function UserContextProvider({children}){
             console.log('User: ' + user)
             axios.get('/profile')
                 .then(({data}) => {
-                    console.log(data);
                     setUser(data);
                     setReady(true);
                 });
