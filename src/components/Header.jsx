@@ -5,16 +5,16 @@ import { UserContext } from '../UserContext';
 export default function Header() {
 
   
+  const {user, setFilterPlaces} = useContext(UserContext);
 
   const useToggle = () => {
     const [toggleValue, setToggleValue] = useState(true);
 
-    const toggler = () => { setToggleValue(!toggleValue) };
+    const toggler = () => { setToggleValue(!toggleValue); setFilterPlaces('') };
     return [toggleValue, toggler]
   };
 
   const [toggle, setToggle] = useToggle();
-  const {user, setFilterPlaces} = useContext(UserContext);
   return ( 
       <div>
            <header className="flex items-center justify-between head">
