@@ -14,7 +14,11 @@ export default function IndexPage(){
             })
     }, []);
 
-    const {filterPlaces} = useContext(UserContext)
+    const {filterPlaces} = useContext(UserContext);
+    console.log(filterPlaces);
+
+    let filterPlaceArray = allPlaces.filter((place) => 
+        place.address.split(',').slice(-1)[0].startsWith(filterPlaces));
 
     const Bounce = styled.div`animation: 1s ${keyframes`${fadeIn}`}`;
 
@@ -49,7 +53,7 @@ export default function IndexPage(){
                         )
                         )
                         :
-                        allPlaces.filter((plc) => plc.address.split(',')[-1].startsWith(filterPlaces)).map((place, index) =>
+                        allPlaces.length > 0 && filterPlaces !== '' && filterPlaceArray.map((place, index) =>
                         (
                             <Bounce key={index}>
                                 <Link to={'/place/' + place._id} key={index}>
