@@ -54,33 +54,6 @@ export default function IndexPage(){
                         )
                         )
                     }
-                    {
-                        filterPlaceArray.length > 0 && filterPlaces !== '' && filterPlaceArray.map((place, index) =>
-                        (
-                            <Bounce key={index}>
-                                <Link to={'/place/' + place._id} key={index}>
-                                
-                                <div className="grow shrink-0 rounded-lg flex shadow-md shadow-gray-200 z-0 " >
-                                    {
-                                        place.photos.length > 0  && (
-                                            <img src={"https://wnw-api.onrender.com/uploads/" + place.photos[0].newName} alt="img" className=" object-cover aspect-square rounded-lg h-full" key={place._id}/>
-                                        )
-                                    }
-                                </div>
-                                <div className="grow-0 shrink mt-1" key={place._id}>
-                                    <h3 className="font-bold"> {place.address} </h3>
-                                    <h2 className="text-sm truncate text-gray-500" key={place._id}> { place.title } </h2>
-                                    <div className="mt-1">
-                                        <h3 className="text-sm"> 
-                                            <span className="font-bold">€{place.price}</span> per night 
-                                        </h3>
-                                    </div>
-                                </div>
-                            </Link>
-                            </Bounce>
-                        )
-                        )
-                    }
                 </div>
         </>
     )
