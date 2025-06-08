@@ -12,8 +12,7 @@ export function UserContextProvider({children}){
     const [redirect, setRedirect] = useState('');
     const [usersList, setUsersList] = useState([]);
     const [addedPlacesList, setAddedPlacesList] = useState([]);
-
-    console.log(user);
+    const [filterPlaces, setFilterPlaces] = useState('');
 
     useEffect(() => {
         if(logout){
@@ -43,7 +42,7 @@ export function UserContextProvider({children}){
     }, [user, usersList])
 
     return (
-       <UserContext.Provider value={{user, setUser, ready, logout, setLogout, redirect, setRedirect, usersList, addedPlacesList}}>
+       <UserContext.Provider value={{user, setUser, ready, logout, setLogout, redirect, setRedirect, usersList, addedPlacesList, filterPlaces, setFilterPlaces}}>
          {
             children
         }
