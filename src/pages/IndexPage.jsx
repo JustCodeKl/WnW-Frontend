@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { fadeIn } from "react-animations";
-import styled, { keyframes } from "styled-components";
+// import { Link } from "react-router-dom";
+// import { fadeIn } from "react-animations";
+// import styled, { keyframes } from "styled-components";
 import { UserContext } from "../UserContext";
+import '../style/MaintenancePage.css';
 
 export default function IndexPage(){
     const [allPlaces, setAllPlaces] = useState([]);
@@ -21,10 +22,10 @@ export default function IndexPage(){
         place.address.split(', ').pop().startsWith(filterPlaces));
     console.log(filterPlaceArray)
 
-    const Bounce = styled.div`animation: 1s ${keyframes`${fadeIn}`}`;
+    // const Bounce = styled.div`animation: 1s ${keyframes`${fadeIn}`}`;
 
     return (
-        <>  
+        <>{/*   
             <div className="grid grid-cols-2 max-sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mt-10 max-sm:mt-6 gap-x-6 gap-y-8 ml-auto mr-auto" role="home">
                     {
                         allPlaces.length > 0 &&
@@ -52,7 +53,16 @@ export default function IndexPage(){
                         )
                         )
                     }
+            </div> */}
+            {
+                <div className="maintenance-container">
+                    <div className="maintenance-content">
+                        <div className="gear">⚙️</div>
+                        <h1>Website Under Maintenance</h1>
+                        <p>We are currently working on improvements.<br />Please check back soon.</p>
+                    </div>
                 </div>
+            }
         </>
     )
 }
