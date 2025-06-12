@@ -1,7 +1,6 @@
 .maintenance-container {
   height: 100vh;
-  background-color: #1e1e2f;
-  color: white;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
