@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { fadeIn } from "react-animations";
-import styled, { keyframes } from "styled-components";
+//import { fadeIn } from "react-animations";
+//import styled, { keyframes } from "styled-components";
 import { UserContext } from "../UserContext";
 import '../style/MaintenancePage.css';
 
