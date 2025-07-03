@@ -25,7 +25,7 @@ export default function IndexPage(){
     // const Bounce = styled.div`animation: 1s ${keyframes`${fadeIn}`}`;
 
     return (
-        <>{/*   
+        <>  
             <div className="grid grid-cols-2 max-sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mt-10 max-sm:mt-6 gap-x-6 gap-y-8 ml-auto mr-auto" role="home">
                     {
                         allPlaces.length > 0 &&
@@ -53,8 +53,8 @@ export default function IndexPage(){
                         )
                         )
                     }
-            </div> */}
-            {
+            </div>
+            /*{
                 <div className="maintenance-container">
                     <div className="maintenance-content">
                         <div className="gear">⚙️</div>
@@ -62,7 +62,7 @@ export default function IndexPage(){
                         <p>We are currently working on improvements.<br />Please check back soon.</p>
                     </div>
                 </div>
-            }
+            }*/
         </>
     )
 }
