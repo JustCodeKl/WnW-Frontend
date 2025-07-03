@@ -14,8 +14,8 @@ export default function LoginPage() {
     async function handleLogin(ev){
         ev.preventDefault();
         try {
-             const userResponse = await axios.post('/login', {email, password});  
-             console.log(userResponse);  
+             const userResponse = await axios.post('/login', {email, password}, {withCredentials: true});  
+             console.log("User response: " + userResponse);  
              if(userResponse.data?.responseStatus !== "Password not Ok" && userResponse.data?.responseStatus !== "User not found"){
                 setUser((await userResponse).data);
                 alert('Login successful');
