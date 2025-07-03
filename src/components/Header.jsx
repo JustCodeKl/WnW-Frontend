@@ -63,7 +63,7 @@ export default function Header() {
             {
               !user && (
                 <div role='username'>
-                  {user.name}
+                  {user?.username}
                 </div>
               )
             }
