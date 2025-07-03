@@ -54,7 +54,7 @@ export default function IndexPage(){
                         )
                     }
             </div>
-            /*{
+            {/*
                 <div className="maintenance-container">
                     <div className="maintenance-content">
                         <div className="gear">⚙️</div>
@@ -62,7 +62,7 @@ export default function IndexPage(){
                         <p>We are currently working on improvements.<br />Please check back soon.</p>
                     </div>
                 </div>
-            }*/
+            */}
         </>
     )
 }
