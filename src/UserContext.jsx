@@ -6,21 +6,17 @@ import { useSelector } from "react-redux";
 export const UserContext = createContext({});
 
 export function UserContextProvider({ children }) {
-    const { user } = useSelector(state => state.auth)
-  const [ready, setReady] = useState(false);
+  const { user } = useSelector((state) => state.auth);
   const [logout, setLogout] = useState(false);
   const [redirect, setRedirect] = useState("");
   const [usersList, setUsersList] = useState([]);
   const [addedPlacesList, setAddedPlacesList] = useState([]);
   const [filterPlaces, setFilterPlaces] = useState("");
-  const { users } = useSelector(state => state.users);
+  const { users } = useSelector((state) => state.users);
 
   useEffect(() => {
     if (logout) {
       console.log("User sets to null");
-    }
-    if (user) {
-      setReady(true);
     }
     setUsersList(users?.usersList);
     if (user) {
@@ -34,7 +30,6 @@ export function UserContextProvider({ children }) {
     <UserContext.Provider
       value={{
         user,
-        ready,
         logout,
         setLogout,
         redirect,

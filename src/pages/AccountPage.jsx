@@ -7,9 +7,9 @@ import { logOutUser } from "../store/auth-slice";
 
 export default function AccountPage(){
 
-    const { ready, logout, setLogout} = useContext(UserContext);
+    const { logout, setLogout} = useContext(UserContext);
     const dispatch = useDispatch();
-    const { user } = useSelector((state) => state.auth)
+    const { user, isAuthenticated } = useSelector((state) => state.auth)
 
     async function logoutUser(){
         dispatch(logOutUser()).then(() =>
@@ -17,11 +17,11 @@ export default function AccountPage(){
 
     }
 
-    if(!ready) return 'Loading...';
+    if(!user) return 'Loading...';
 
     if(logout) { return < Navigate to={'/'} />};
 
-    if(!user && ready) { return <Navigate to="/login" />; }
+    if(!user && !isAuthenticated) { return <Navigate to="/login" />; }
 
     return (
         <div className="">
