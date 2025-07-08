@@ -10,7 +10,7 @@ export default function LoginPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [redirect, setRedirect] = useState(false);
-    const {setUser, setLogout} = useContext(UserContext);
+    const {setLogout} = useContext(UserContext);
     const dispatch = useDispatch();
 
     async function handleLogin(ev){
@@ -23,7 +23,6 @@ export default function LoginPage() {
              //const userResponse = await axios.post('/login', {email, password}, {withCredentials: true});  
              dispatch(loginUser(formData)).then(data => {
                 if(data.payload.success){
-                    setUser(data.payload.user);
                     setRedirect(true);
                     setLogout(false)
                 }
@@ -41,7 +40,7 @@ export default function LoginPage() {
         }
     }
 
-    if(redirect) return < Navigate to='/' />
+    if(redirect) return < Navigate to='/' replace/>
 
     return (
         <div className="mt-4 grow flex items-center justify-around">
