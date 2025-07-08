@@ -21,15 +21,15 @@ export default function LoginPage() {
                 email: email,
                 password: password
             }
-             const userResponse = await axios.post('/login', {email, password}, {withCredentials: true});  
-             dispatch(loginUser(formData).then(data => console.log(data)))
-             if(userResponse.data?.responseStatus !== "Password not Ok" && userResponse.data?.responseStatus !== "User not found"){
+             //const userResponse = await axios.post('/login', {email, password}, {withCredentials: true});  
+             dispatch(loginUser(formData)).then(data => console.log(data))
+            /*  if(userResponse.data?.responseStatus !== "Password not Ok" && userResponse.data?.responseStatus !== "User not found"){
                 setUser((await userResponse).data);
                 alert('Login successful');
                 setLogout(false);
                 setRedirect(true);
              }
-             else alert('Login failed. ' + userResponse.data?.responseStatus);
+             else alert('Login failed. ' + userResponse.data?.responseStatus); */
         } catch (error) {
             alert('Login failed :(');
             console.log(error);
