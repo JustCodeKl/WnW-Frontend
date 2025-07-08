@@ -10,13 +10,35 @@ const initialState = {
   error: null,
 };
 
+export const registerUser = createAsyncThunk(
+  "auth/registerUser",
+  async (userData, { rejectWithValue }) => {
+    try {
+      const response = await axios.post(
+        "https://wnw-api.onrender.com/api/auth/register",
+        userData,
+        {
+          withCredentials: true,
+        }
+      );
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 export const loginUser = createAsyncThunk(
   "auth/loginUser",
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await axios.post("https://wnw-api.onrender.com/api/auth/login", userData, {
-        withCredentials: true,
-      });
+      const response = await axios.post(
+        "https://wnw-api.onrender.com/api/auth/login",
+        userData,
+        {
+          withCredentials: true,
+        }
+      );
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -30,6 +52,18 @@ const authSlice = createSlice({
   reducers: {},
   extraReducers: (builder) =>
     builder
+      .addCase(registerUser.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(registerUser.fulfilled, (state) => {
+        state.isLoading = false;
+        state.isAuthenticated = false;
+      })
+      .addCase(registerUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload || "Registration failed";
+      })
       .addCase(loginUser.pending, (state) => {
         state.isLoading = true;
         state.error = null;

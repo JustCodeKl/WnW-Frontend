@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import axios from "axios";
 import { UserContext } from "../UserContext";
+import { useDispatch } from "react-redux";
 
 export default function RegisterPage(){
 
@@ -13,19 +13,17 @@ export default function RegisterPage(){
     const [redirect, setRedirect] = useState(false);
     const emailList = usersList?.map(user => user.email)
 
+    const dispatch = useDispatch();
+
 
    async function registerUser(e){
         e.preventDefault();
         if(emailList?.includes(email)) alert("Please enter another E-mail");    
         if(password === repeat && !emailList?.includes(email)){
             try {
-                await axios.post('/register', {
-                       name,
-                       email,
-                       password
-                   });
+                dispatch(registerUser({name, email, password})).then(() => {
                    alert('Registration was successful :). Try to login now');
-                   setRedirect(true);
+                   setRedirect(true);})
                    
                } catch (er) {
                    alert('Registration failed :(');
