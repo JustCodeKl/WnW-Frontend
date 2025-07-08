@@ -8,11 +8,11 @@ const initialState = {
 };
 
 export const getUsers = createAsyncThunk(
-    '/users/GetAllUsers',
+    '/users/getAllUsers',
     async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        "https://wnw-api.onrender.com/api/users/get-all-users",{},
+        "https://wnw-api.onrender.com/api/users/get-all-users",
         {
           withCredentials: true,
         }
