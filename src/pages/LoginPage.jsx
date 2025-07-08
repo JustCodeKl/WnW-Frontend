@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unescaped-entities */
-import axios from "axios";
 import { useContext, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { UserContext } from "../UserContext";
@@ -22,7 +21,13 @@ export default function LoginPage() {
                 password: password
             }
              //const userResponse = await axios.post('/login', {email, password}, {withCredentials: true});  
-             dispatch(loginUser(formData)).then(data => console.log(data))
+             dispatch(loginUser(formData)).then(data => {
+                if(data.payload.success){
+                    setUser(data.payload.user);
+                    setRedirect(true);
+                    setLogout(false)
+                }
+             })
             /*  if(userResponse.data?.responseStatus !== "Password not Ok" && userResponse.data?.responseStatus !== "User not found"){
                 setUser((await userResponse).data);
                 alert('Login successful');

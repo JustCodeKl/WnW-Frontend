@@ -1,11 +1,12 @@
 import { useContext, useState} from 'react'
 import { Link } from 'react-router-dom';
 import { UserContext } from '../UserContext';
+import { useSelector } from 'react-redux';
 
 export default function Header() {
 
-  
-  const {user, setFilterPlaces} = useContext(UserContext);
+  const {user} = useSelector((state) => state.auth);
+  const {setFilterPlaces} = useContext(UserContext);
 
   const useToggle = () => {
     const [toggleValue, setToggleValue] = useState(true);
