@@ -2,11 +2,12 @@ import { useContext, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { UserContext } from "../UserContext";
 import { useDispatch } from "react-redux";
+import { registerUser } from "../store/auth-slice";
 
 export default function RegisterPage(){
 
     const { usersList } = useContext(UserContext)
-    const [name, setName] = useState('');
+    const [userName, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [repeat, setRepeat] = useState('');
@@ -16,12 +17,12 @@ export default function RegisterPage(){
     const dispatch = useDispatch();
 
 
-   async function registerUser(e){
+   async function register(e){
         e.preventDefault();
         if(emailList?.includes(email)) alert("Please enter another E-mail");    
         if(password === repeat && !emailList?.includes(email)){
             try {
-                dispatch(registerUser({name, email, password})).then(() => {
+                dispatch(registerUser({name: userName, email, password})).then(() => {
                    alert('Registration was successful :). Try to login now');
                    setRedirect(true);})
                    
@@ -38,8 +39,8 @@ export default function RegisterPage(){
         <div className="mt-4 grow flex items-center justify-around">
             <div className="mb-64">
                 <h1 className="text-5xl text-center mb-4"> Register </h1>
-                <form className="max-w-md mx-auto" onSubmit={registerUser}>
-                    <input type="text" name="" placeholder="your username" id="username" value={name} onChange={e => setName(e.target.value)} required/>
+                <form className="max-w-md mx-auto" onSubmit={register}>
+                    <input type="text" name="" placeholder="your username" id="username" value={userName} onChange={e => setName(e.target.value)} required/>
                     <input type="email" name="" id="useremail" placeholder="your@email.com" value={email} onChange={e => setEmail(e.target.value)} required/>
                     <input type="password" name="" placeholder="Enter your password here" id="userpassword" value={password} onChange={e => setPassword(e.target.value)} required/>
                     {
