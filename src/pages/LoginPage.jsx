@@ -3,6 +3,8 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { UserContext } from "../UserContext";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../store/auth-slice";
 
 export default function LoginPage() {
 
@@ -10,10 +12,13 @@ export default function LoginPage() {
     const [password, setPassword] = useState('');
     const [redirect, setRedirect] = useState(false);
     const {setUser, setLogout} = useContext(UserContext);
+    const dispatch = useDispatch();
 
     async function handleLogin(ev){
+        
         ev.preventDefault();
         try {
+            dispatch(loginUser({email, password})).then(data => console.log(data))
              const userResponse = await axios.post('/login', {email, password}, {withCredentials: true});  
              console.log("User response: " + userResponse);  
              if(userResponse.data?.responseStatus !== "Password not Ok" && userResponse.data?.responseStatus !== "User not found"){
