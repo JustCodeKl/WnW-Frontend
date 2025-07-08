@@ -64,7 +64,7 @@ export default function Header() {
             {
               user && (
                 <div role='username'>
-                  {user?.username}
+                  {user?.name}
                 </div>
               )
             }
