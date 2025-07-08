@@ -34,7 +34,7 @@ const usersSlice = createSlice({
             state.usersList = []
           })
           .addCase(getUsers.fulfilled, (state, action) => {
-            state.usersList = action.payload.usersList
+            state.usersList = action.payload.users
           })
           .addCase(getUsers.rejected, (state, action) => {
             state.usersList = action.payload || "Registration failed";
