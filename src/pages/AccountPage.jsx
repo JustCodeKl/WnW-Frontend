@@ -14,12 +14,11 @@ export default function AccountPage(){
     async function logoutUser(){
         dispatch(logOutUser()).then(() =>{
         setLogout(true);
-        return < Navigate to={'/'} replace/>
     })
 
     }
 
-    if(!user) return 'Loading...';
+    if(!user && !logout) return 'Loading...';
 
     if(logout) { return < Navigate to={'/'} replace/>};
 
