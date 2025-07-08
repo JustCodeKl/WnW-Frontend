@@ -16,7 +16,6 @@ export default function IndexPage(){
     }, []);
 
     const {filterPlaces} = useContext(UserContext);
-    console.log(filterPlaces);
 
     let filterPlaceArray = allPlaces.filter((place) => 
         place.address.split(', ').pop().startsWith(filterPlaces));
