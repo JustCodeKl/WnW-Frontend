@@ -1,17 +1,19 @@
 import { useContext } from "react"
 import { UserContext } from "../UserContext"
 import { Navigate } from "react-router-dom";
-import axios from "axios";
 import NavBar from "../components/NavBar";
+import { useDispatch, useSelector } from "react-redux";
+import { logOutUser } from "../store/auth-slice";
 
 export default function AccountPage(){
 
-    const { ready, user, setUser, logout, setLogout} = useContext(UserContext);
+    const { ready, logout, setLogout} = useContext(UserContext);
+    const dispatch = useDispatch();
+    const { user } = useSelector((state) => state.auth)
 
     async function logoutUser(){
-        await axios.post('/logout');
-        setUser(null);
-        setLogout(true);
+        dispatch(logOutUser()).then(() =>
+        setLogout(true))
 
     }
 
