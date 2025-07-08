@@ -12,14 +12,16 @@ export default function AccountPage(){
     const { user, isAuthenticated } = useSelector((state) => state.auth)
 
     async function logoutUser(){
-        dispatch(logOutUser()).then(() =>
-        setLogout(true))
+        dispatch(logOutUser()).then(() =>{
+        setLogout(true);
+        return < Navigate to={'/'} replace/>
+    })
 
     }
 
     if(!user) return 'Loading...';
 
-    if(logout) { return < Navigate to={'/'} />};
+    if(logout) { return < Navigate to={'/'} replace/>};
 
     if(!user && !isAuthenticated) { return <Navigate to="/login" />; }
 
