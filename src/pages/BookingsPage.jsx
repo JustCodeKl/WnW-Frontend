@@ -1,22 +1,21 @@
 import { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
-import axios from "axios";
 import { differenceInCalendarDays } from "date-fns";
 import { Link, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { getUserBookings } from "../store/users-slice";
 
 export default function BookingsPage(){
     const [bookingList, setBookingList] = useState();
     const {pathname} = useLocation();
     const actualDate = Date.now();
     let action = pathname.split('/')?.[3];
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        axios.get('/user-bookings')
-            .then((response) =>{
-                if(response.status === 200) {
-                    setBookingList(response.data)
-                }
-            })
+        dispatch(getUserBookings()).then((data) => {
+            console.log(data)
+        })
     }, []);
 
     function linkClasses (type=null) {
