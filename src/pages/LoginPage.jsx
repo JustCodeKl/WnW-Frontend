@@ -18,7 +18,6 @@ export default function LoginPage() {
         
         ev.preventDefault();
         try {
-            dispatch(loginUser({email, password})).then(data => console.log(data))
              const userResponse = await axios.post('/login', {email, password}, {withCredentials: true});  
              console.log("User response: " + userResponse);  
              if(userResponse.data?.responseStatus !== "Password not Ok" && userResponse.data?.responseStatus !== "User not found"){
@@ -43,7 +42,8 @@ export default function LoginPage() {
                 <form className="max-w-md mx-auto" onSubmit={handleLogin}>
                     <input type="email" name="" id="email" placeholder="your@email.com" value={email} onChange={e => setEmail(e.target.value)}/>
                     <input type="password" name="" placeholder="Enter your password here" id="password" value={password} onChange={e =>setPassword(e.target.value)}/>
-                    <button type="submit" className="primary">Login</button>
+                    <button type="submit" className="primary" onClick={() => 
+            dispatch(loginUser({email, password})).then(data => console.log(data))}>Login</button>
                     <div className="text-center mt-4 text-gray-500">
                         Don't have an account yet? <Link to="/register" className="text-primary underline"> Register now</Link>
                     </div>
