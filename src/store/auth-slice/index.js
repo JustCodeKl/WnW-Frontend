@@ -14,7 +14,7 @@ export const loginUser = createAsyncThunk(
   "auth/loginUser",
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await axios.post("", userData, {
+      const response = await axios.post("https://wnw-api.onrender.com/api/auth/login", userData, {
         withCredentials: true,
       });
       return response.data;
