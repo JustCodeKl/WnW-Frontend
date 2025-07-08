@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
     dispatch(checkProfile());
-    dispatch(getUsers()).then(data => console.log(data));
+    dispatch(getUsers());
   }, [dispatch]);
   return (
     <UserContextProvider>

@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 export const UserContext = createContext({});
 
 export function UserContextProvider({ children }) {
-  const [user, setUser] = useState(null);
+    const { user } = useSelector(state => state.auth)
   const [ready, setReady] = useState(false);
   const [logout, setLogout] = useState(false);
   const [redirect, setRedirect] = useState("");
@@ -17,7 +17,6 @@ export function UserContextProvider({ children }) {
 
   useEffect(() => {
     if (logout) {
-      setUser(null);
       console.log("User sets to null");
     }
     if (user) {
@@ -35,7 +34,6 @@ export function UserContextProvider({ children }) {
     <UserContext.Provider
       value={{
         user,
-        setUser,
         ready,
         logout,
         setLogout,
